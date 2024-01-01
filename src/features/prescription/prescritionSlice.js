@@ -26,6 +26,22 @@ export const uploadPrescripton = createAsyncThunk(
   }
 );
 
+export const getAllPrescriptions = createAsyncThunk(
+  "get/prescription",
+  async (_, thunkAPI) => {
+    try {
+      return await prescriptionService.getAllPrescriptions();
+    } catch (error) {
+      const message =
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message;
+      console.log(message);
+      return thunkAPI.rejectWithValue(message);
+    }
+  }
+);
+
 const prescriptionSlice = createSlice({
   name: "prescriptionSlice",
   initialState,
@@ -53,6 +69,25 @@ const prescriptionSlice = createSlice({
         state.prescriptions = [];
       })
       .addCase(uploadPrescripton.rejected, (state, action) => {
+        state.isLoading = false;
+        state.isError = true;
+        state.isSuccess = false;
+        state.successMessage = "";
+        state.errorMessage = action.payload;
+        state.prescriptions = [];
+      })
+      .addCase(getAllPrescriptions.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(getAllPrescriptions.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isError = false;
+        state.isSuccess = true;
+        state.errorMessage = "";
+        state.successMessage = "Fetched all prescriptions";
+        state.prescriptions = action.payload.prescriptions;
+      })
+      .addCase(getAllPrescriptions.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = true;
         state.isSuccess = false;

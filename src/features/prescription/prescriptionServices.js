@@ -6,8 +6,15 @@ const uploadPrescription = async (file) => {
   return data;
 };
 
+// Get all prescriptions (Admin)
+const getAllPrescriptions = async () => {
+  const { data } = await axios.get("/api/v1/prescription/all");
+  return data;
+};
+
 const prescriptionService = {
   uploadPrescription,
+  getAllPrescriptions,
 };
 
 export default prescriptionService;

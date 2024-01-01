@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Prescription.css";
 import img1 from "./images/prescr-rx.png";
 import img2 from "./images/prescr-phone.png";
@@ -12,15 +12,22 @@ import Footer1 from "../footer1/Footer1";
 import Footer2 from "../footer2/Footer2";
 import Navbar1 from "../navbar1/Navbar1";
 import Navbar2 from "../navbar2/Navbar2";
+import toast from "react-hot-toast";
 
-import { useDispatch } from "react-redux";
-import { uploadPrescripton } from "../../features/prescription/prescritionSlice";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  reset,
+  uploadPrescripton,
+} from "../../features/prescription/prescritionSlice";
+import Loader from "../SharedComponents/Loader";
 
 const Prescription = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [state, setState] = useState(0);
 
   const dispatch = useDispatch();
+  const { isLoading, isSuccess, successMessage, isError, errorMessage } =
+    useSelector((state) => state.prescription);
 
   //const navigation = useNavigation();
   const handleFileUpload = (event) => {
@@ -42,7 +49,23 @@ const Prescription = () => {
     setSelectedFile(null);
   };
 
-  return (
+  useEffect(() => {
+    if (isError && errorMessage) {
+      console.log("error occurred");
+      toast.error(errorMessage);
+    }
+
+    if (isSuccess && successMessage) {
+      console.log("successfully added image");
+      toast.success(successMessage);
+    }
+
+    dispatch(reset());
+  }, [isError, isSuccess, errorMessage, successMessage]);
+
+  return isLoading ? (
+    <Loader />
+  ) : (
     <>
       <Navbar1 />
       <Navbar2 />
