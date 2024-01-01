@@ -46,6 +46,8 @@ import Prescription_details from "./components/adminSide/Prescription_details";
 function App() {
   const dispatch = useDispatch();
 
+  // Mohsin added new commit
+
   useEffect(() => {
     const authToken = localStorage.getItem("authToken");
 
