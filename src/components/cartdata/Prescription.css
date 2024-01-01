@@ -1,0 +1,94 @@
+.prescription-main
+{
+    border: 1px solid lightblue;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 12px;
+}
+.prescription-right
+{
+    border: 1px solid lightblue;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 12px;
+}
+.prescription-right h5{
+    
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+}
+.prescription-right p{
+    text-align: left;
+    color: black;
+    font-weight: 350;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.prescription-icon p
+{
+    color: black;
+    font-weight: 350;
+    justify-content: left;
+    text-align: left;
+    font-size: medium;
+    font-family:'Times New Roman', Times, serif;
+}
+.upload-pic 
+{
+margin-left: 20px;
+}
+.upload-pic p
+{
+    color: black;
+    font-weight: 350;
+    text-align: left;
+}
+.upload-pic h5{
+    color: #2b599b;
+    text-align: left;
+}
+.prescription-upload
+{
+    display: flex;
+    align-items:center; 
+   justify-content: center;
+    flex-direction: column;
+    border: 2px dashed #ccc;
+    padding: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    
+}
+.prescription-upload p
+{
+    color:black;
+font-weight: bold;
+text-align: left;
+}
+.upload-icon
+{
+    font-size:24px;
+     color: #2b599b;
+    margin-left:20px;
+}
+.remove-icon
+{
+    font-size: xx-large;
+    color: black;
+    justify-content: right;
+    text-align: right;
+    cursor: pointer;
+    font-weight: bolder;
+}
+.prescription-proceed
+{
+    width: 100%;
+    font-size: larger;
+    font-weight: bolder;
+    margin-top: 30px;
+ color: white;
+    background-color: #02b9b1;
+}

@@ -1,0 +1,11 @@
+.words
+{
+    list-style-type:circle;
+    color: black;
+    margin-bottom: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.container
+{
+    margin-bottom: 50px;
+}

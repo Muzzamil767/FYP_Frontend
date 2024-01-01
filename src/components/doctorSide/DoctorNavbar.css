@@ -1,0 +1,64 @@
+.container {
+    padding: 0 !important;
+  }
+  
+  /* Override Bootstrap navbar styles */
+  .navbar-admin {
+    height: 100vh;
+    min-width: 250px;
+    transition: width 0.3s;
+    overflow-x: hidden;
+    background-color: #050f33;
+  }
+ 
+  .nav-link-admin,
+.navbar-brand-admin {
+  padding: 10px 20px;
+  color: black;
+  transition: background-color 0.3s;
+  color: white;
+  font: bolder;
+  text-decoration: none;
+  
+}
+.nav-link-admin
+{
+    font-size: larger;
+}
+.nav-link-admin:hover,
+.navbar-brand-admin:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+    .link-main-admin
+{
+    margin-bottom: 400px;
+
+}
+@media(min-width:768px) and (max-width:991px){
+    .link-main-admin{
+        margin-bottom: 700px;
+    }
+}
+@media (max-width: 991.98px) {
+    .nav-toggle-admin  {
+      position: absolute;
+      top: 10px; /* Adjust this value as needed */
+      left: 10px; /* Adjust this value as needed */
+    }
+  }
+
+
+ 
+@media (min-width: 992px) {
+    .navbar-admin {
+      flex-direction: column;
+      align-items: flex-start;
+      height: 100vh;
+    }
+  
+    .navbar-brand-admin {
+      margin-bottom: auto;
+    }
+  }
+ 

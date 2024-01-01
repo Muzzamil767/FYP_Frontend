@@ -1,0 +1,14 @@
+.main
+{
+    margin-top: 20px;
+    background-color: #050f33;
+    height: 100%;
+    margin-bottom: -50px;
+}
+
+.footer-li{
+    list-style-type: none;
+    color: white;
+    margin-left: 10px;
+    margin-bottom: 15px;
+}

@@ -1,0 +1,33 @@
+.name,.email,.number,.message
+{
+    width: 100%;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 40px;
+}
+label
+{
+font-weight: bolder;
+}
+.box {
+    width: 300px;
+    height: 200px;
+    background-image: url('./images/medicines2.jpg');
+    background-color: rgba(17, 221, 237, 1); /* Background color with opacity */
+    background-blend-mode: overlay; /* Overlay the background color */
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+.box-content {
+    padding: 20px;
+  }
+  

@@ -1,0 +1,58 @@
+.card {
+    margin-top: 35px;
+    height: 210px;
+  }
+  .custom-card-img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30%; /* Adjust the size of the image if needed */
+    opacity: 0.7; /* Optional: Adjust the image opacity */
+  }
+  .custom-card-img2 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30%; /* Adjust the size of the image if needed */
+    opacity: 1; 
+    height: 130px;
+  }
+  .card-container {
+   
+    position: relative;
+  }
+  .card-1 {
+    background-color: #ffead4;
+  }
+  .card-2 {
+    background-color: #def0ef;
+  }
+  .card-3 {
+    background-color: #f2f2f0;
+  }
+  .card-4 {
+    background-color: #f7dedb;
+  }
+  .card-5 {
+    background-color: #dcebfa;
+  }
+  .button-1 {
+    margin-top: 40px;
+  }
+  .button-2 {
+    margin-top: 63px;
+    background-color: #32aa9e;
+  }
+  .button-3 {
+    margin-top: 63px;
+    background-color: #003b82;
+  }
+  .button-4 {
+    margin-top: 63px;
+    background-color: #003b82;
+  }
+  .button-5 {
+    margin-top: 45px;
+    background-color: #003b82;
+  }
+  

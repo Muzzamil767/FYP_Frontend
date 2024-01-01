@@ -1,0 +1,25 @@
+.payment-checkbox
+{
+    margin-left: 20px;
+}
+.payment-checkbox input
+{
+    margin-right: 10px;
+    
+}
+.payment-main
+{
+    border: 1px solid black;
+    margin-top: 20px;
+    border: 1px solid lightblue;
+    border-radius: 12px;
+    
+}
+.payment-main h4{
+    margin-top: 30px;
+    margin-left: 10px;
+}
+.card-details
+{
+    margin-left: 20px;
+}

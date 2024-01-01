@@ -1,0 +1,70 @@
+.about-para1
+{
+    color: black;
+    text-align: left;
+    font-weight: 400;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+}
+.about-para2
+{
+    color: black;
+    text-align: left;
+    font-weight: 400;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.about-ul
+{
+    color: #072365;
+    font-size: large;
+    opacity: 1;
+    font-weight:500;
+    list-style-type:georgian;
+
+}
+.about-main
+{
+    margin-top: 30px;
+}
+.about-heading
+{
+    color: #072365;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+.about-card-text
+{
+    
+   color: white;
+    text-align: left;
+    font-size: large;
+    font-weight: 450;
+    margin-left: 20px;
+}
+.about-card-title
+{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: xx-large;
+    font-weight: bolder;
+    color: white;
+    margin-left: 20px;
+}
+.about-card{
+    
+    width: 100%;
+    height: 85%;
+    background-color: #02b9b1;
+    border-radius: 1px;
+}
+.about-card-image
+{
+    color: white;
+    height: 40%;
+    
+    width: 30%;
+    position: absolute;
+    right: 20px;
+    bottom: 40px;
+}

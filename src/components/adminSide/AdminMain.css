@@ -1,0 +1,254 @@
+
+  .main-boxes
+  {
+    margin-top: 90px;
+  }
+  .boxes-1
+  {
+    border-right: none;
+    border-top: none;
+    border-bottom: 3px solid darkblue;
+    border-left: 3px solid darkblue;
+    border-radius: 12px;
+    height: 140px;
+  }
+  .boxes-1:hover{
+    border-right: 3px solid darkblue;
+    border-top: 3px solid darkblue;
+    border-bottom: none;
+    border-left: none;
+  }
+  .boxes-3
+  {
+    border-right: none;
+    border-top: none;
+    border-bottom: 3px solid yellowgreen;
+    border-left: 3px solid yellowgreen;
+    border-radius: 12px;
+    height: 140px;
+  }
+  .boxes-2
+  {
+    border-right: none;
+    border-top: none;
+    border-bottom: 3px solid green;
+    border-left: 3px solid green;
+    border-radius: 12px;
+    height: 140px;
+  }
+  .boxes-1 p{
+    color: green;
+    text-decoration: underline;
+    font-size: small;
+    text-align: left;
+    margin-left: 10px;
+  }
+  .boxes-2 p{
+    color: green;
+    text-decoration: underline;
+    font-size: small;
+    text-align: left;
+    margin-left: 10px;
+  }
+  .boxes-3 p{
+    color: green;
+    text-decoration: underline;
+    font-size: small;
+    text-align: left;
+    margin-left: 10px;
+  }
+  .left-1
+  {
+    margin-top: 30px;
+  }
+  .left-2
+  {
+    margin-top: 30px;
+  }
+  .left-3
+  {
+    margin-top: 30px;
+  }
+  .left-3
+  {
+    margin-top: 30px;
+  }
+  .right-1
+  {
+    margin-top: 20px;
+  }
+  .right-2
+  {
+    margin-top: 20px;
+  }
+  .right-3
+  {
+    margin-top: 20px;
+  }
+  .right-1 h6
+  {
+    font-size: large;
+    margin-top: 15px;
+  }
+  .right-1 h3
+  {
+    font-weight: bolder;
+  }
+  
+  .right-2 h6
+  {
+    font-size: large;
+    margin-top: 15px;
+  }
+  .right-2 h3
+  {
+    font-weight: bolder;
+  }
+  .right-3 h6
+  {
+    font-size: large;
+    margin-top: 15px;
+  }
+  .right-3 h3
+  {
+    font-weight: bolder;
+  }
+
+  .boxes-4
+  {
+    border-right: none;
+    border-top: none;
+    border-bottom: 3px solid orange;
+    border-left: 3px solid orange;
+    border-radius: 12px;
+    height: 140px;
+  }
+  .boxes-4 p{
+    color: green;
+    text-decoration: underline;
+    font-size: small;
+    text-align: left;
+    margin-left: 10px;
+  }.boxes-5
+  {
+    border-right: none;
+    border-top: none;
+    border-bottom: 3px solid red;
+    border-left: 3px solid red;
+    border-radius: 12px;
+    height: 140px;
+  }
+  .boxes-5 p{
+    color: green;
+    text-decoration: underline;
+    font-size: small;
+    text-align: left;
+    margin-left: 10px;
+  }.boxes-6
+  {
+    border-right: none;
+    border-top: none;
+    border-bottom: 3px solid grey;
+    border-left: 3px solid grey;
+    border-radius: 12px;
+    height: 140px;
+  }
+  .boxes-6 p{
+    color: green;
+    text-decoration: underline;
+    font-size: small;
+    text-align: left;
+    margin-left: 10px;
+  }.boxes-7
+  {
+    border-right: none;
+    border-top: none;
+    border-bottom: 3px solid coral;
+    border-left: 3px solid coral;
+    border-radius: 12px;
+    height: 140px;
+  }
+  .boxes-7 p{
+    color: green;
+    text-decoration: underline;
+    font-size: small;
+    text-align: left;
+    margin-left: 10px;
+  }.boxes-8
+  {
+    border-right: none;
+    border-top: none;
+    border-bottom: 3px solid brown;
+    border-left: 3px solid brown;
+    border-radius: 12px;
+    height: 140px;
+  }
+  .boxes-8 p{
+    color: green;
+    text-decoration: underline;
+    font-size: small;
+    text-align: left;
+    margin-left: 10px;
+  }.boxes-9
+  {
+    border-right: none;
+    border-top: none;
+    border-bottom: 3px solid orangered;
+    border-left: 3px solid orangered;
+    border-radius: 12px;
+    height: 140px;
+  }
+  .boxes-9 p{
+    color: green;
+    text-decoration: underline;
+    font-size: small;
+    text-align: left;
+    margin-left: 10px;
+  }
+  @media(max-width:991px){
+    .boxes-2,.boxes-2,.boxes-3,.boxes-4,.boxes-5,.boxes-6{
+      margin-top: 50px;
+    }
+    
+  }
+  .boxes-2:hover{
+    border-right: 3px solid green;
+    border-top: 3px solid green;
+    border-bottom: none;
+    border-left: none;
+  } .boxes-3:hover{
+    border-right: 3px solid yellowgreen;
+    border-top: 3px solid yellowgreen;
+    border-bottom: none;
+    border-left: none;
+  } .boxes-4:hover{
+    border-right: 3px solid orange;
+    border-top: 3px solid orange;
+    border-bottom: none;
+    border-left: none;
+  } .boxes-5:hover{
+    border-right: 3px solid red;
+    border-top: 3px solid red;
+    border-bottom: none;
+    border-left: none;
+  }
+  .new-product{
+    justify-content: right;
+    margin-top: 30px;
+    
+  }
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    z-index: 1000; /* Ensure the modal is above other content */
+    background-color: #f0eded;
+   
+  }

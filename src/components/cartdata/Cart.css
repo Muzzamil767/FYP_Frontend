@@ -1,0 +1,67 @@
+.cart-title
+{
+    color: black;
+}
+.cart-price
+{
+    color: black;
+    font-weight: 350;
+    margin-right: 20px;
+    margin-top: 30px;
+    
+
+}
+.cart-description1
+{
+    color: black;
+    font-weight: 350;
+    margin-top: 30px;
+    margin-left: 10px;
+}
+.cart-img
+{
+    width: 30%;
+    height: 60%;
+}
+.cart-left1
+{
+    border: 1px solid lightblue;
+    border-radius: 12px;
+    background-color: white;
+}
+.cart-items
+{
+    background-color: white;
+}
+.del-icon
+{
+   
+    margin-top: 30px;
+    
+    color: black;
+    background-color: lightgray;
+    border-radius: 10px;
+    
+    
+    font-size: small;
+    
+    border: none; 
+    margin-top: 20px;
+    
+    
+   
+}
+.right-cart1
+{
+    border: 1px solid lightblue;
+    border-radius: 10px;
+    background-color: white;
+}
+.cart-proceed
+{
+    width: 100%;
+    font-size: larger;
+    font-weight: bolder;
+    color: white;
+    background-color: #02b9b1;
+}

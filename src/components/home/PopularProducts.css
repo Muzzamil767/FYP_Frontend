@@ -1,0 +1,67 @@
+/* In your CSS file */
+.popular-card1,.popular-card2,.popular-card3,.popular-card4 {
+    
+    height: 85%;
+    border: none;
+    
+    
+
+  }
+  .popular-card1
+  {
+    background-color: #02b9b1;
+  }
+  .popular-card2
+  {
+    background-color: #ffaf2a;
+  }
+  .popular-card3
+  {
+    background-color: #072365;
+  }
+  .popular-card4
+  {
+    background-color: #02b9b1;
+  }
+  .popular-card-img
+  {
+    height: 30%;
+    width: 25%;
+    margin-top: 20px;
+    margin-left: 15px;
+  }
+  
+ .popular-card-text
+ {
+  color: white;
+  font-weight: lighter;
+  justify-content: left;
+  text-align: left;
+ }
+ .popular-card-title
+ {
+
+font-weight: bolder;  color: white;
+
+ }
+ .popular-main-text
+ {
+  color: black;
+  text-align: left;
+  font-weight: lighter;
+  font-family: Arial, Helvetica, sans-serif;
+
+ }
+ .pharmacy-heading
+ {
+ 
+  color:#02b9b1;
+  margin-top: 30px;
+  font-weight: bolder;
+  margin-bottom: 20px;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+ .main-popular{
+  margin-top: 30px;
+
+ }

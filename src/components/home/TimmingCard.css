@@ -1,0 +1,54 @@
+.box11
+{
+    background-color: #02b9b1;
+    height: 130px;
+    margin-top: 15px;
+    width: 100%;
+    margin-bottom: 30px;
+    align-content: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-weight: bolder;
+    font-size: large;
+    margin-top: 40px;
+
+}
+.location-icon {
+    font-size: 2rem; /* Increase the size as needed */
+    margin-right: 10px;
+  }
+.box12
+{
+   
+    background-color: #ffaf2a;
+    height: 130px;
+    margin-top: 15px;
+    width: 100%;
+    margin-bottom: 30px;
+    align-content: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-weight: bolder;
+    font-size: large;
+    margin-top: 40px;
+
+}
+
+.box13
+{
+    
+    background-color: #072365;
+    height: 130px;
+    margin-top: 15px;
+    width: 100%;
+    margin-bottom: 30px;
+    align-content: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-weight: bolder;
+    font-size: large;
+    margin-top: 40px;
+}

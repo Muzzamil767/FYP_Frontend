@@ -1,0 +1,92 @@
+.appointment-card-text1
+{
+    color: black;
+    text-align: left;
+    font-weight: bold;
+    font-size: larger;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+.appointment-card-text2
+{
+    color: black;
+    text-align: left;
+    font-weight: 350;
+    font-family: 'Courier New', Courier, monospace;
+}
+.appointment-card-text3
+{
+    color: black;
+    text-align: left;
+    font-weight: 350;
+    font-family: 'Courier New', Courier, monospace;
+}
+.appointment-card-text4
+{
+    color: black;
+    text-align: left;
+    
+    text-decoration: none;
+    font-size: large;
+    font-weight: bolder;
+}
+.appointment-card-text4:hover
+{
+    color: orange;
+    text-align: left;
+    font-weight: bolder;
+    font-size: larger;
+}
+.appointment-card-image
+{
+    max-width: 100%;
+    height: 100px;
+    
+    width: 60%;
+    justify-content: left;
+    opacity: 1;
+    background-color: transparent;
+    border-radius: 50%;
+    
+    border: 1px ;
+    margin-bottom: 30px;
+}
+.container-2 {
+    padding: 20px;
+  }
+  .card-21 {
+    flex: 0 0 calc(50% - 20px);
+    margin: 10px;
+    background-color:white;
+    padding: 15px;
+ border-radius: 12px;
+    
+    text-align: center;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height:90%;
+    
+
+  }
+  .appointment-input-1
+{
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    
+   
+    padding: 10px;
+  
+    width: 30%;
+  margin-top: 30px;
+  
+  
+  justify-content:right ;
+    
+ 
+}
+.appointment-pagination
+{
+    justify-content: center;
+}
+

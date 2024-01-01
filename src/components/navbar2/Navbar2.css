@@ -1,0 +1,82 @@
+.color
+{
+    color: aliceblue;
+}
+.nav-dropdown-title {
+    color: black !important; /* Override Bootstrap's default styles */
+  }
+  /* Navbar2.css */
+.login-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: black;
+  }
+  
+  .login-logo {
+    width: 30px; /* Adjust the size as needed */
+    height: 30px;
+  }
+  
+  .login-name {
+    font-size: 14px; /* Adjust the font size as needed */
+  }
+  .user-icon {
+    font-size: 18px;
+    display: inline-block;
+    margin-bottom: -7px;
+    
+     /* Adjust the font size as needed */
+  }
+  .dropdown-menu {
+    background-color: white; /* Replace 'your-desired-dropdown-background-color' with your preferred color value */
+  }
+  
+  /* Change the text color of the dropdown items */
+  .dropdown-menu a {
+    color: #072264; /* Replace 'your-desired-text-color' with your preferred color value */
+  }  
+  .navbar-links {
+    color: #072264; /* Link text color */
+    font-size: 18px; /* Link font size */
+    text-decoration: none; /* Remove the default underline */
+    padding: 5px 10px; /* Adjust padding as needed */
+    transition: color 0.3s; /* Smooth transition for link color */
+  }
+  
+  /* Hover effect for the links */
+  .navbar-links:hover {
+    color: #02b9b1; /* Change link color on hover */
+  }
+  
+  /* Active link styles */
+  .navbar-links.active {
+    font-weight: bold; /* Make active link bold */
+  }
+    
+  .nav2-button1
+  {
+    border: none;
+    border-radius: 12px;
+
+  }
+  .nav2-button1:hover
+  {
+    background-color:#02b9b1;
+    color: white;
+  }
+
+  
+  .custom-dropdown::after {
+    display: none !important;
+    color: aliceblue !important;
+  }
+  .custom-dropdown > .nav-link.dropdown-toggle::after {
+    border-top-color: transparent;
+    margin-top: -10px; /* Replace your-color with the desired color */
+  }
+  
+  /* Target the dropdown menu toggle button when it's hovered */
+  .custom-dropdown > .nav-link.dropdown-toggle:hover::after {
+    border-top-color: transparent; /* Replace your-hover-color with the desired hover color */
+  }

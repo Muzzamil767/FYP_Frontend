@@ -1,0 +1,59 @@
+.custom-card-img3 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  opacity: 0.7;
+  height: 70%; /* Optional: Adjust the image height */
+
+  /* Media query for screen sizes smaller than "lg" */
+  @media (max-width: 992px) {
+    width: 40%; /* Adjust the size of the image for smaller screens */
+  }
+}
+.text-card {
+  margin-right: 500px; /* Default margin right */
+  
+  /* Media query for screen sizes smaller than "lg" */
+  @media (max-width: 992px) {
+    margin-right: 150px; /* Adjusted margin right for smaller screens */
+  }
+}
+
+  .card-container2 {
+   
+    position: relative;
+   
+  }
+  .card-14
+  {
+    margin-top: 35px;
+    height: 470px;
+    background-color: #02b9b1;
+    border-radius: 1px;
+  }
+.card-15
+{
+    background-color: #072365;
+    height: 470px;
+    border-radius: 1px;
+}
+.button-14
+{
+    background-color: orange;
+    width: 140px;
+    border-radius: 20px;
+    border: none;
+    margin-left: 25px;
+    margin-top: 20px;
+    font-size: larger;
+}
+.button-15
+{
+    background-color: orange;
+    width: 140px;
+    border-radius: 20px;
+    border:  none;
+    margin-left: 25px;
+    margin-top: 50px;
+    font-size: larger;
+}
