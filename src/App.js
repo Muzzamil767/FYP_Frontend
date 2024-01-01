@@ -43,8 +43,6 @@ import SignupDoctor from "./components/signupForDoctor/SignupDoctor";
 import DoctorAccepted from "./components/doctorSide/DoctorAccepted";
 import DoctorMain1 from "./components/doctorSide/DoctorMain1";
 import Prescription_details from "./components/adminSide/Prescription_details";
-import toast, { Toaster } from "react-hot-toast";
-
 function App() {
   const dispatch = useDispatch();
 
@@ -102,8 +100,6 @@ function App() {
         <Route path="doctorMain" element={<DoctorMain1 />} />
         <Route path="doctorAccepted" element={<DoctorAccepted />} />
       </Routes>
-
-      <Toaster />
     </>
   );
 }
