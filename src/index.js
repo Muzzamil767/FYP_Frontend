@@ -12,16 +12,14 @@ import store from "./features/rootReducer";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      {" "}
-      {/* Wrap your App component with Provider */}
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-      <ToastContainer position="top-right" autoClose={5000} />
-    </Provider>
-  </React.StrictMode>
+  <Provider store={store}>
+    {" "}
+    {/* Wrap your App component with Provider */}
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+    <ToastContainer position="top-right" autoClose={5000} />
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function

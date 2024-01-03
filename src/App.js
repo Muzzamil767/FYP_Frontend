@@ -43,6 +43,9 @@ import SignupDoctor from "./components/signupForDoctor/SignupDoctor";
 import DoctorAccepted from "./components/doctorSide/DoctorAccepted";
 import DoctorMain1 from "./components/doctorSide/DoctorMain1";
 import Prescription_details from "./components/adminSide/Prescription_details";
+import { Toaster } from "react-hot-toast";
+import DoctorLogin from "./components/login/DoctorLogin";
+
 function App() {
   const dispatch = useDispatch();
 
@@ -81,6 +84,7 @@ function App() {
         <Route path="contactUs" element={<ContactUs />} />
         <Route path="aboutUs" element={<Aboutus />} />
         <Route path="login" element={<Login />} />
+        <Route path="/loginDoctor" element={<DoctorLogin />} />
         <Route path="signUp" element={<SignUp />} />
         <Route path="signUpDoctor" element={<SignupDoctor />} />
         <Route path="cart" element={<Cart />} />
@@ -102,6 +106,7 @@ function App() {
         <Route path="doctorMain" element={<DoctorMain1 />} />
         <Route path="doctorAccepted" element={<DoctorAccepted />} />
       </Routes>
+      <Toaster />
     </>
   );
 }

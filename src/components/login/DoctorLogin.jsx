@@ -9,10 +9,10 @@ import Footer1 from "../footer1/Footer1";
 import Footer2 from "../footer2/Footer2";
 import Navbar1 from "../navbar1/Navbar1";
 import Navbar2 from "../navbar2/Navbar2";
-import { loginUser, reset } from "../../features/auth/authSlice";
+import { loginDoctor, reset } from "../../features/auth/authSlice";
 import Loader from "../SharedComponents/Loader";
 
-const Login = () => {
+const DoctorLogin = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -25,7 +25,7 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    dispatch(loginUser({ email, password }));
+    dispatch(loginDoctor({ email, password }));
 
     // try {
     //   const response = await fetch('/api/v1/login', {
@@ -63,7 +63,7 @@ const Login = () => {
 
   useEffect(() => {
     if (user) {
-      navigate("/");
+      navigate("/doctorMain");
     }
 
     if (isError && errorMessage) {
@@ -79,7 +79,7 @@ const Login = () => {
       <Navbar2 />
       <div className="login-page">
         <div className="login-container">
-          <h1>Login</h1>
+          <h1>Login As Doctor</h1>
           {isLoading ? (
             <Loader />
           ) : (
@@ -138,4 +138,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default DoctorLogin;
