@@ -1,9 +1,9 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import "./Payment.css";
 import { Link, useHistory } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { connect , useSelector } from 'react-redux';
-import Alert from 'react-bootstrap/Alert';
+import { connect, useSelector } from "react-redux";
+import Alert from "react-bootstrap/Alert";
 import {
   faArrowLeft,
   faPlus,
@@ -16,6 +16,7 @@ import Footer2 from "../footer2/Footer2";
 import Navbar1 from "../navbar1/Navbar1";
 import Navbar2 from "../navbar2/Navbar2";
 import { toast } from "react-toastify";
+import axios from "axios";
 const Payment = ({ cartDetails, userId }) => {
   const [paymentOption, setPaymentOption] = useState("");
   const [cardDetails, setCardDetails] = useState({
@@ -24,12 +25,8 @@ const Payment = ({ cartDetails, userId }) => {
     cvv: "",
   });
 
-  const {shippingAddress} = useSelector((state) => state.address);
+  const { shippingAddress } = useSelector((state) => state.address);
   let orderItems = useSelector((state) => state.cart2);
-
-  
-
-
 
   const handlePaymentOptionChange = (event) => {
     setPaymentOption(event.target.value);
@@ -45,7 +42,9 @@ const Payment = ({ cartDetails, userId }) => {
 
   const isCardDetailsValid = () => {
     const { cardNumber, expiryDate, cvv } = cardDetails;
-    return cardNumber.trim() !== "" && expiryDate.trim() !== "" && cvv.trim() !== "";
+    return (
+      cardNumber.trim() !== "" && expiryDate.trim() !== "" && cvv.trim() !== ""
+    );
   };
 
   const handleConfirmOrder = async () => {
@@ -54,53 +53,48 @@ const Payment = ({ cartDetails, userId }) => {
       toast.error("Please select a payment option.");
       return;
     }
-  
+
     // Additional validation for debit card
     if (paymentOption === "debitCard" && !isCardDetailsValid()) {
-      toast.error("Please fill in all card details before confirming the order.");
+      toast.error(
+        "Please fill in all card details before confirming the order."
+      );
       return;
     }
 
     orderItems = orderItems.map((item) => {
-      return {...item , images: "Dummy Image"}
-    })
-  
+      return { ...item, images: "Dummy Image" };
+    });
+
     // Prepare data for the API request
     const orderData = {
       orderItems,
       shippingInfo: shippingAddress,
     };
 
-    
     try {
       // Make an HTTP POST request to the API endpoint
-      const response = await fetch("/api/v1/order/new", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(orderData),
-      });
-  
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-  
+      const { data } = await axios.post(
+        `${process.env.REACT_APP_API_URL}/api/v1/order/new`,
+        orderData,
+        {
+          withCredentials: true,
+        }
+      );
+
       // Handle the success case (you can also handle the response data if needed)
       toast.success("Order placed successfully!");
     } catch (error) {
       // Handle the error case
-      console.error("Error placing order:", error.message);
+      console.error("Error placing order:", error.response.data.message);
       toast.error("Error placing order. Please try again later.");
     }
   };
-  
-
 
   return (
     <>
-    <Navbar1/>
-    <Navbar2/>
+      <Navbar1 />
+      <Navbar2 />
       <div className="container">
         <Link to="/address">
           <div className="d-flex" style={{ color: "blue", fontSize: "larger" }}>
@@ -130,29 +124,28 @@ const Payment = ({ cartDetails, userId }) => {
                 </div>
               </div>
               <hr />
-              <h3 style={{textAlign:"left",marginLeft:"10px"}}>Payment Option</h3>
+              <h3 style={{ textAlign: "left", marginLeft: "10px" }}>
+                Payment Option
+              </h3>
 
               <div className="payment-checkbox">
-              <div style={{ marginBottom: "1px" }}>
-                <input
-                  type="radio"
-                  name="paymentOption"
-                  value="cashOnDelivery"
-                  checked={paymentOption === "cashOnDelivery"}
-                  onChange={handlePaymentOptionChange}
-                />
-                <label htmlFor="cashOnDelivery">Cash On delivery</label>
-              </div>
-              <br />
-              
-              <br />
-            </div>
+                <div style={{ marginBottom: "1px" }}>
+                  <input
+                    type="radio"
+                    name="paymentOption"
+                    value="cashOnDelivery"
+                    checked={paymentOption === "cashOnDelivery"}
+                    onChange={handlePaymentOptionChange}
+                  />
+                  <label htmlFor="cashOnDelivery">Cash On delivery</label>
+                </div>
+                <br />
 
-           
-           
+                <br />
+              </div>
+            </div>
           </div>
-        </div>
-        {/* ... */}
+          {/* ... */}
           <div className="col-lg-4 col-sm-12">
             <div className="address-right">
               <h5>How to Upload Your Prescription?</h5>
@@ -169,36 +162,37 @@ const Payment = ({ cartDetails, userId }) => {
             </div>
 
             {paymentOption === "debitCard" && !isCardDetailsValid() && (
-                <Alert variant="danger">
-                  Please fill in all card details before confirming the order.
-                </Alert>
-              )}
-<div>
-<Link to="/cardEnd">
-  <button
-    onClick={handleConfirmOrder}
-    className={`btn prescription-proceed btn-lg ${
-      !paymentOption || (paymentOption === "debitCard" && !isCardDetailsValid())
-        ? "disabled"
-        : ""
-    }`}
-    disabled={!paymentOption || (paymentOption === "debitCard" && !isCardDetailsValid())}
-  >
-    Confirm Order
-  </button>
-</Link>
-
-</div>
-
+              <Alert variant="danger">
+                Please fill in all card details before confirming the order.
+              </Alert>
+            )}
+            <div>
+              <Link to="/cardEnd">
+                <button
+                  onClick={handleConfirmOrder}
+                  className={`btn prescription-proceed btn-lg ${
+                    !paymentOption ||
+                    (paymentOption === "debitCard" && !isCardDetailsValid())
+                      ? "disabled"
+                      : ""
+                  }`}
+                  disabled={
+                    !paymentOption ||
+                    (paymentOption === "debitCard" && !isCardDetailsValid())
+                  }
+                >
+                  Confirm Order
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
-      <Footer1/>
-      <Footer2/>
+      <Footer1 />
+      <Footer2 />
     </>
   );
 };
-
 
 const mapStateToProps = (state) => ({
   cartDetails: state.cart.cartDetails,

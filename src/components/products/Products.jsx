@@ -1,37 +1,40 @@
-import React, { useState, useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import './Products.css';
-import ProductInfo from './ProductInfo';
-import Navbar1 from '../navbar1/Navbar1';
-import Navbar2 from '../navbar2/Navbar2';
-import Footer1 from '../footer1/Footer1';
-import Footer2 from '../footer2/Footer2';
+import React, { useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import "./Products.css";
+import ProductInfo from "./ProductInfo";
+import Navbar1 from "../navbar1/Navbar1";
+import Navbar2 from "../navbar2/Navbar2";
+import Footer1 from "../footer1/Footer1";
+import Footer2 from "../footer2/Footer2";
+import axios from "axios";
 
 const Products = () => {
-  const [selectedCategory, setSelectedCategory] = useState('All');
-  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [searchTerm, setSearchTerm] = useState("");
   const [selectedCard, setSelectedCard] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/api/v1/products')
-      .then((response) => response.json())
+    axios
+      .get(`${process.env.REACT_APP_API_URL}/api/v1/products`)
       .then((responseData) => {
-        if (responseData.success && responseData.products) {
+        console.log(responseData);
+        if (responseData.data.success && responseData.data.products) {
           // Log the contents of the products array
-          console.log('Products Array:', responseData.products);
-          setData(responseData.products);
+          console.log("Products Array:", responseData.data.products);
+          setData(responseData.data.products);
           setIsLoading(false);
         } else {
-          console.error('Invalid API response:', responseData);
+          console.error("Invalid API response:", responseData);
           setIsLoading(false);
         }
       })
+
       .catch((error) => {
-        console.error('Error fetching data:', error);
+        console.error("Error fetching data:", error);
         setIsLoading(false);
       });
   }, []);
@@ -49,11 +52,20 @@ const Products = () => {
     setSelectedCard(null);
   };
 
-  const button = ['All', 'Medicines', 'Personol Care', 'Baby Care', 'Health Devices'];
+  const button = [
+    "All",
+    "Medicines",
+    "Personol Care",
+    "Baby Care",
+    "Health Devices",
+  ];
 
   // Filter products based on selected category and search term
   const filteredProducts = data.filter((product) => {
-    if (selectedCategory === 'All' || product.category.trim() === selectedCategory.trim()) {
+    if (
+      selectedCategory === "All" ||
+      product.category.trim() === selectedCategory.trim()
+    ) {
       return product.name.toLowerCase().includes(searchTerm.toLowerCase());
     }
     return false;
@@ -71,7 +83,9 @@ const Products = () => {
                 {button.map((btn) => (
                   <button
                     key={btn}
-                    className={selectedCategory === btn ? 'Button3 active' : 'Button3'}
+                    className={
+                      selectedCategory === btn ? "Button3 active" : "Button3"
+                    }
                     onClick={() => setSelectedCategory(btn)}
                   >
                     {btn}
@@ -90,7 +104,7 @@ const Products = () => {
                 />
                 <FontAwesomeIcon
                   icon={faSearch}
-                  style={{ fontSize: 'larger', color: 'black' }}
+                  style={{ fontSize: "larger", color: "black" }}
                   className="mx-1"
                 />
               </div>
@@ -98,22 +112,32 @@ const Products = () => {
           </div>
         </div>
         <div className="container-1">
-        <div className="row cards">
-          {filteredProducts.map((card) => (
-            <div key={card.id} className="col-lg-3 col-sm-12">
-              <div className="card-11">
-                <img src={card.image} alt={card.name} className="card-image" />
-                <a href="#" className="card-title1" onClick={() => openModal(card)}>
-                  {card.name}
-                </a>
+          <div className="row cards">
+            {filteredProducts.map((card) => (
+              <div key={card.id} className="col-lg-3 col-sm-12">
+                <div className="card-11">
+                  <img
+                    src={card.image.url}
+                    alt={card.name}
+                    className="card-image"
+                  />
+                  <a
+                    href="#"
+                    className="card-title1"
+                    onClick={() => openModal(card)}
+                  >
+                    {card.name}
+                  </a>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
         </div>
       </div>
 
-      {showModal && selectedCard && <ProductInfo cardData={selectedCard} closeModal={closeModal} />}
+      {showModal && selectedCard && (
+        <ProductInfo cardData={selectedCard} closeModal={closeModal} />
+      )}
       <Footer1 />
       <Footer2 />
     </>

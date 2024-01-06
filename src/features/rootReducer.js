@@ -9,6 +9,7 @@ import addressReducer from "./addressReducer";
 import prescriptionReducer from "./prescription/prescritionSlice";
 import doctorReducer from "./doctor/doctorSlice";
 import authenticationReducer from "./auth/authSlice";
+import appointmentReducer from "./appointment/appointmentSlice";
 
 const store = configureStore({
   reducer: {
@@ -20,6 +21,7 @@ const store = configureStore({
     prescription: prescriptionReducer,
     doctor: doctorReducer,
     authentication: authenticationReducer,
+    appointment: appointmentReducer,
   },
 });
 

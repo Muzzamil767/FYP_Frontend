@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 const EditProduct = () => {
   const { productId } = useParams();
@@ -11,17 +11,17 @@ const EditProduct = () => {
     // For example, you can use the Fetch API or an HTTP library like Axios.
     // Replace the placeholder with your actual API call.
 
-    fetch(`/api/v1/admin/product/${productId}`)
+    fetch(`${process.env.REACT_APP_API_URL}/api/v1/admin/product/${productId}`)
       .then((response) => response.json())
       .then((responseData) => {
         if (responseData.success) {
           setProduct(responseData.product);
         } else {
-          console.error('Failed to fetch product:', responseData.error);
+          console.error("Failed to fetch product:", responseData.error);
         }
       })
       .catch((error) => {
-        console.error('Error while fetching product:', error);
+        console.error("Error while fetching product:", error);
       });
   }, [productId]);
 
@@ -32,23 +32,23 @@ const EditProduct = () => {
     // Replace the placeholder with your actual API call.
 
     fetch(`/api/v1/admin/product/${editedProduct._id}`, {
-      method: 'PUT',
+      method: "PUT",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(editedProduct),
     })
       .then((response) => response.json())
       .then((responseData) => {
         if (responseData.success) {
-          console.log('Product updated successfully');
+          console.log("Product updated successfully");
           setProduct(editedProduct); // Update the product data in the component
         } else {
-          console.error('Failed to update product:', responseData.error);
+          console.error("Failed to update product:", responseData.error);
         }
       })
       .catch((error) => {
-        console.error('Error while updating product:', error);
+        console.error("Error while updating product:", error);
       });
   };
 
@@ -73,16 +73,51 @@ const EditProduct = () => {
           handleSaveProduct(editedProduct);
         }}
       >
-        <input type="text" name="name" placeholder="Name" defaultValue={product.name} required /><br />
-        <input type="text" name="description" placeholder="Title" defaultValue={product.description} required /><br />
-        <input type="number" name="stock" placeholder="Stock" defaultValue={product.stock} required /><br />
-        <input type="text" name="category" placeholder="Category" defaultValue={product.category} required /><br />
-        <input type="number" name="price" placeholder="Price" defaultValue={product.price} required /><br />
-        <button type="submit">Save</button>
+        <input
+          type="text"
+          name="name"
+          placeholder="Name"
+          defaultValue={product.name}
+          required
+        />
+        <br />
+        <input
+          type="text"
+          name="description"
+          placeholder="Title"
+          defaultValue={product.description}
+          required
+        />
+        <br />
+        <input
+          type="number"
+          name="stock"
+          placeholder="Stock"
+          defaultValue={product.stock}
+          required
+        />
+        <br />
+        <input
+          type="text"
+          name="category"
+          placeholder="Category"
+          defaultValue={product.category}
+          required
+        />
+        <br />
+        <input
+          type="number"
+          name="price"
+          placeholder="Price"
+          defaultValue={product.price}
+          required
+        />
+        <br />
+
+        <button type="submit">Sav</button>
       </form>
     </div>
   );
 };
-
 
 export default EditProduct;

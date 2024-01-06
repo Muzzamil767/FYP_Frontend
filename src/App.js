@@ -33,7 +33,7 @@ import AdminCustomer from "./components/adminSide/AdminCustomer";
 import AdminNavbar from "./components/adminSide/AdminNavbar";
 import { BrowserRouter } from "react-router-dom";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "./features/authSlice";
 import PasswordUpdate from "./components/passwordUpdate/PasswordUpdate";
 import EditProduct from "./components/adminSide/EditProduct";
@@ -43,37 +43,16 @@ import SignupDoctor from "./components/signupForDoctor/SignupDoctor";
 import DoctorAccepted from "./components/doctorSide/DoctorAccepted";
 import DoctorMain1 from "./components/doctorSide/DoctorMain1";
 import Prescription_details from "./components/adminSide/Prescription_details";
-import { Toaster } from "react-hot-toast";
 import DoctorLogin from "./components/login/DoctorLogin";
 
-function App() {
-  const dispatch = useDispatch();
+import { Toaster } from "react-hot-toast";
+import { ProtectedRoute } from "protected-route-react";
+import BookAppointment from "./components/appointment/BookAppointment";
 
+function App() {
+  const { user } = useSelector((state) => state.authentication);
   // Mohsin added new commit - --- --- ----
 
-  useEffect(() => {
-    const authToken = localStorage.getItem("authToken");
-
-    console.log(authToken);
-    if (authToken) {
-      // Fetch user data from the server using the token
-      // You need to implement a fetch request to your server here
-      fetch("/api/v1/me", {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${authToken}`,
-        },
-      })
-        .then((response) => response.json())
-        .then((user) => {
-          // Dispatch the setUser action to update the login state in Redux
-          dispatch(setUser(user.user));
-        })
-        .catch((error) => {
-          console.error("Error fetching user data:", error);
-        });
-    }
-  }, [dispatch]);
   return (
     <>
       <Routes>
@@ -87,7 +66,7 @@ function App() {
         <Route path="/loginDoctor" element={<DoctorLogin />} />
         <Route path="signUp" element={<SignUp />} />
         <Route path="signUpDoctor" element={<SignupDoctor />} />
-        <Route path="cart" element={<Cart />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="address" element={<Address />} />
         <Route path="payment" element={<Payment />} />
         <Route path="prescription" element={<Prescription />} />
@@ -105,6 +84,14 @@ function App() {
 
         <Route path="doctorMain" element={<DoctorMain1 />} />
         <Route path="doctorAccepted" element={<DoctorAccepted />} />
+        <Route
+          element={<ProtectedRoute isAuthenticated={user ? true : false} />}
+        >
+          <Route
+            path="/bookAppointment/:doctorId"
+            element={<BookAppointment />}
+          />
+        </Route>
       </Routes>
       <Toaster />
     </>

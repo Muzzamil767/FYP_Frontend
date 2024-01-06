@@ -2,7 +2,7 @@ import React from "react";
 import "./ProductInfo.css";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../features/cartSlice";
-import Toast from 'react-bootstrap/Toast';
+import Toast from "react-bootstrap/Toast";
 import { toast } from "react-toastify";
 
 const ProductInfo = ({ cardData, closeModal }) => {
@@ -10,25 +10,21 @@ const ProductInfo = ({ cardData, closeModal }) => {
   const cartItems = useSelector((state) => state.cart);
 
   const handleAddToCart = () => {
-    const isItemAlreadyInCart = cartItems.some((item) => item._id == cardData._id);
+    const isItemAlreadyInCart = cartItems.some(
+      (item) => item._id == cardData._id
+    );
 
-  if (isItemAlreadyInCart) {
-    // If the item is already in the cart, show an alert
-    toast.error("Already Exist in Cart!");
-  } else {
-    // If the item is not in the cart, add it to the cart
-    dispatch(addToCart(cardData));
-    console.log(`this is cardData ${JSON.stringify(cardData)}`);
-    console.log("Added to cart:", cardData.name);
-    console.log("Added to cart ID:", cardData._id);
-  }
+    if (isItemAlreadyInCart) {
+      // If the item is already in the cart, show an alert
+      toast.error("Already Exist in Cart!");
+    } else {
+      // If the item is not in the cart, add it to the cart
+      dispatch(addToCart(cardData));
+      console.log(`this is cardData ${JSON.stringify(cardData)}`);
+      console.log("Added to cart:", cardData.name);
+      console.log("Added to cart ID:", cardData._id);
+    }
   };
-  
-  
-  
-  
-  
-  
 
   return (
     <>
@@ -47,7 +43,7 @@ const ProductInfo = ({ cardData, closeModal }) => {
                 {" "}
                 <img
                   className="modal-image"
-                  src={cardData.image}
+                  src={cardData.image.url}
                   alt="image here"
                 />
               </div>
@@ -68,7 +64,12 @@ const ProductInfo = ({ cardData, closeModal }) => {
                   <li>Please drink water to prevent dehydration</li>
                   <li>Please avoid Alcohol for good health</li>
                 </ul>
-                <button className="btn btn-warning btn-lg " onClick={handleAddToCart}>Add to Cart</button>
+                <button
+                  className="btn btn-warning btn-lg "
+                  onClick={handleAddToCart}
+                >
+                  Add to Cart
+                </button>
               </div>
             </div>
           </div>
